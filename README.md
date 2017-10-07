@@ -18,31 +18,10 @@ end
 
 ## Usage
 
-First, start a link to the application in your supervision tree:
+To perform routing number validation without an ETS table lookup:
 
 ```elixir
-defmodule MyApp.Application do
-  use Application
-
-  def start(_type, _args) do
-    import Supervisor.Spec, warn: false
-
-    children = [
-      # ... your supervised applications here ...
-
-      supervisor(BigBrother, [])
-    ]
-
-    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
-    Supervisor.start_link(children, opts)
-  end
-end
-```
-
-Note that validations do *not* require ETS table lookups, so validation can be performed without starting the application.
-
-```elixir
-iex> BigBrother.valid_routing_number?("111900659")
+iex> BigBrother.routing_number_valid?("111900659")
 true
 ```
 

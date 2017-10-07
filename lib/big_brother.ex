@@ -16,35 +16,14 @@ defmodule BigBrother do
 
   ## Usage
 
-  First, start a link to the application in your supervision tree:
-
-  ```elixir
-  defmodule MyApp.Application do
-    use Application
-
-    def start(_type, _args) do
-      import Supervisor.Spec, warn: false
-
-      children = [
-        # ... your supervised applications here ...
-
-        supervisor(BigBrother, [])
-      ]
-
-      opts = [strategy: :one_for_one, name: MyApp.Supervisor]
-      Supervisor.start_link(children, opts)
-    end
-  end
-  ```
-
-  Note that validations do *not* require ETS table lookups, so validation can be performed without starting the application.
+  To perform routing number validation without an ETS table lookup:
 
   ```elixir
   iex> BigBrother.routing_number_valid?("111900659")
   true
   ```
 
-  Otherwise, performing lookups can be done with
+  Otherwise, performing lookups can be done with:
 
   ```elixir
   iex> BigBrother.get_bank("111900659")
