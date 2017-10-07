@@ -40,8 +40,9 @@ defmodule BigBrother.Registry do
 
   ## Client API
 
-  @spec lookup(String.t) :: {:ok, Bank.t} | {:error, :not_found}
+  @spec lookup(String.t) :: nil | Bank.t
   def lookup(routing_number) when is_bitstring(routing_number) do
     GenServer.call(__MODULE__, {:lookup, routing_number})
   end
+  def lookup(_), do: nil
 end
