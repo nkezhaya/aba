@@ -12,7 +12,9 @@ defmodule BigBrother.Registry do
   def init(_) do
     table = :ets.new(__MODULE__, [])
 
-    File.stream!("data.txt")
+    Application.app_dir(:big_brother, "priv")
+    |> Path.join("data.txt")
+    |> File.stream!
     |> Stream.each(fn line ->
       routing = String.slice(line, 0,    9)
       bank    = String.slice(line, 35,  36) |> String.trim

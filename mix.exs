@@ -23,8 +23,7 @@ defmodule BigBrother.Mixfile do
   defp package do
     [licenses: ["MIT"],
      maintainers: ["Nick Kezhaya <nick@whitepaperclip.com>"],
-     links: %{"GitHub" => "https://github.com/whitepaperclip/BigBrother"},
-     files: ["data.txt", "lib", "mix.exs", "README*", "LICENSE*"]]
+     links: %{"GitHub" => "https://github.com/whitepaperclip/BigBrother"}]
   end
 
   defp description do
