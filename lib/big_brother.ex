@@ -40,7 +40,7 @@ defmodule BigBrother do
   Note that validations do *not* require ETS table lookups, so validation can be performed without starting the application.
 
   ```elixir
-  iex> BigBrother.valid_routing_number?("111900659")
+  iex> BigBrother.routing_number_valid?("111900659")
   true
   ```
 
