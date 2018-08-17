@@ -1,8 +1,8 @@
-defmodule BigBrother.Mixfile do
+defmodule ABA.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :big_brother,
+    [app: :aba,
      version: "0.1.0",
      elixir: "~> 1.5",
      start_permanent: Mix.env == :prod,
@@ -13,7 +13,7 @@ defmodule BigBrother.Mixfile do
 
   def application do
     [extra_applications: [:logger],
-     mod: {BigBrother, []}]
+     mod: {ABA, []}]
   end
 
   defp deps do
@@ -23,10 +23,10 @@ defmodule BigBrother.Mixfile do
   defp package do
     [licenses: ["MIT"],
      maintainers: ["Nick Kezhaya <nick@whitepaperclip.com>"],
-     links: %{"GitHub" => "https://github.com/whitepaperclip/BigBrother"}]
+     links: %{"GitHub" => "https://github.com/whitepaperclip/ABA"}]
   end
 
   defp description do
-    "BigBrother is an Elixir library for performing validation and lookups on ABA routing numbers."
+    "ABA is an Elixir library for performing validation and lookups on ABA routing numbers."
   end
 end

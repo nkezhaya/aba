@@ -1,4 +1,4 @@
-defmodule BigBrother.Validator do
+defmodule ABA.Validator do
   @moduledoc false
 
   @spec routing_number_valid?(any) :: boolean
@@ -6,17 +6,18 @@ defmodule BigBrother.Validator do
     [a, b, c, d, e, f, g, h, i] =
       routing_number
       |> String.split("")
-      |> List.delete_at(9)
       |> Enum.map(&Integer.parse/1)
-      |> Enum.map(fn {digit, _} -> digit end)
+      |> Enum.map(fn
+        {digit, _} when is_integer(digit) -> digit
+        _ -> nil
+      end)
+      |> Enum.reject(&is_nil/1)
 
-    total =
-      (a * 3) + (b * 7) + (c * 1) +
-      (d * 3) + (e * 7) + (f * 1) +
-      (g * 3) + (h * 7) + (i * 1)
+    total = a * 3 + b * 7 + c * 1 + d * 3 + e * 7 + f * 1 + g * 3 + h * 7 + i * 1
 
     Integer.mod(total, 10) == 0
-  rescue _ ->
-    false
+  rescue
+    _ ->
+      false
   end
 end
