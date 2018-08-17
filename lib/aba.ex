@@ -62,7 +62,7 @@ defmodule ABA do
 
   """
 
-  @spec get_bank(any) :: {:ok, Bank} | {:error, :not_found | :invalid}
+  @spec get_bank(any) :: {:ok, ABA.Bank.t()} | {:error, :not_found | :invalid}
   def get_bank(routing_number) do
     if routing_number_valid?(routing_number) do
       case ABA.Registry.lookup(routing_number) do
