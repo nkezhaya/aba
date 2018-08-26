@@ -1,6 +1,8 @@
 defmodule ABA do
   @moduledoc """
-  ABA is an Elixir library for performing validation and lookups on ABA routing numbers. It stores all routing numbers and bank information in an ETS table. Therefore, you should initialize the application in a supervision tree.
+  ABA is an Elixir library for performing validation and lookups on ABA routing
+  numbers. It stores all routing numbers and bank information in an ETS table.
+  Therefore, you should initialize the application in a supervision tree.
 
   ## Installation
 
@@ -28,8 +30,8 @@ defmodule ABA do
   ```elixir
   iex> ABA.get_bank("111900659")
   {:ok, %ABA.Bank{routing_number: "111900659", name: "WELLS FARGO BANK",
-                         address: "255 2ND AVE SOUTH", city: "MINNEAPOLIS",
-                         state: "MN", zip: "55479"}}
+                  address: "255 2ND AVE SOUTH", city: "MINNEAPOLIS",
+                  state: "MN", zip: "55479"}}
   ```
   """
 
