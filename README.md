@@ -2,7 +2,7 @@
 
 ABA is an Elixir library for performing validation and lookups on ABA routing numbers. It stores all routing numbers and bank information in an ETS table. Therefore, you should initialize the application in a supervision tree.
 
-Full docs here: https://hexdocs.pm/big_brother/ABA.html
+Full docs here: https://hexdocs.pm/aba/index.html
 
 ## Installation
 
