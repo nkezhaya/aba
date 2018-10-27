@@ -11,7 +11,7 @@ Add `big_brother` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:aba, "~> 0.2.0"}
+    {:aba, "~> 0.3.0"}
   ]
 end
 ```
