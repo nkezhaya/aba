@@ -6,7 +6,7 @@ Full docs here: https://hexdocs.pm/aba/index.html
 
 ## Installation
 
-Add `big_brother` to your list of dependencies in `mix.exs`:
+Add `aba` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
