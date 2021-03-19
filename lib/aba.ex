@@ -42,7 +42,7 @@ defmodule ABA do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(ABA.Registry, [])
+      ABA.Registry
     ]
 
     opts = [strategy: :one_for_one, name: ABA.Supervisor]

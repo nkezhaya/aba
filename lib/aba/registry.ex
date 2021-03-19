@@ -3,9 +3,9 @@ defmodule ABA.Registry do
   use GenServer
   alias ABA.Bank
 
-  @spec start_link() :: {:ok, pid()} | {:error, any()}
-  def start_link() do
-    GenServer.start_link(__MODULE__, nil, name: __MODULE__)
+  @spec start_link(term()) :: {:ok, pid()} | {:error, any()}
+  def start_link(arg) do
+    GenServer.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
   ## Server callbacks
